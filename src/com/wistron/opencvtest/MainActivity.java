@@ -125,11 +125,11 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback , C
 //        Log.d(TAG, "["+left+"=("+o.getRect().left+"/"+DW+"), "+top+"=("+o.getRect().top+"/"+DH+"), "+width+", "+height+"]");
         Bitmap faceBmp = Bitmap.createBitmap(picture, left, top, width, height, matrix, false);  //320*240
         Bitmap scaleBmp = faceBmp;
- //       if(width>100 || height > 100){
+        if(width>100 || height > 100){
                 scaleBmp = Bitmap.createScaledBitmap(faceBmp , 100, 100, false);
                 width = 100;
                 height = 100;
-  //      }
+        }
         Bitmap emptyBmp = Bitmap.createBitmap(width, height, scaleBmp.getConfig());
         Bitmap grayBmp = setGrayImage(width, height, scaleBmp , emptyBmp);
 
